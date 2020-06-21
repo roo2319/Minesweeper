@@ -34,6 +34,9 @@ class State:
         mines = list(map(self.fixIndex,mines))
         self.placeMines(mines)
         self.makeClues(mines)
+    
+    def check(self,row,col):
+        return str(self.board[self.fixIndex(col + row * self.cols)])
 
     # Changes an index to account for boundary cells
     def fixIndex(self, idx):
